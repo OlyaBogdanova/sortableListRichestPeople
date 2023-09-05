@@ -1,0 +1,87 @@
+:root {
+  --border-color: #e3e5e4;
+  --background-color: #c3c7ca;
+  --text-color: #34444f;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  border: none;
+  outline: none;
+  text-decoration: none;
+  list-style: none;
+}
+
+body {
+  background-color: #fff;
+  font-family: "Lato", sans-serif;
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+.draggable-list {
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+  li {
+    background-color: #fff;
+    display: flex;
+    flex: 1;
+    &:not(:last-of-type) {
+      border-bottom: 1px solid var(--border-color);
+    }
+    &.right {
+      .person-name {
+        color: #3ae374;
+      }
+    }
+    &.wrong {
+      .person-name {
+        color: #ff3838;
+      }
+    }
+    &.over{
+      .draggable{
+        background-color: #eaeaea;
+      }
+    }
+  }
+  .number {
+    background-color: var(--background-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    height: 60px;
+    width: 60px;
+  }
+  .person-name {
+    margin: 0 20px 0 0;
+  }
+
+  .draggable {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex: 1;
+    cursor: pointer;
+    padding: 15px;
+  }
+}
+.check-btn{
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-size: 16px;
+  padding: 10px 20px;
+  cursor: pointer;
+
+  &:active{
+    transform: scale(0.98);
+  }
+ 
+}
